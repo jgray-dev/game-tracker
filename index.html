@@ -4,32 +4,52 @@
   <meta charset="UTF-8">
   <title>Game Tracker</title>
   <script defer src="main.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="navbar">navbar</div>
-  <div id="display-game">
-    <img src="#" alt="game display" id="display-image">
+
+<div>
+  <div id="navbar" class="navbar container col-12">navbar :P</div>
+</div>
+<div style="min-height: 65px"></div>
+<div class="container">
+
+  <div id="display-game" class="section display row">
+    <img src="#" alt="game display" id="display-image" class="col-3">
     <h2 id="display-name">Game Name</h2>
     <p id="display-description">Description</p>
     <div id="progress-bar">progress bar here</div>
   </div>
-  <div id="add-game">
-    <form>
-      <label for="game-name">Game name</label><br>
-      <input type="text" id="game-name" name="game-name" value="Enter game name"><br>
-      <label for="progress">Game progress</label><br>
-      <input type="text" id="progress" name="progress" value="Game progress"><br>
-      <label for="comments">Comments</label><br>
-      <input type="text" id="comments" name="comments" value="Game comments"><br><br>
-      <input type="submit" value="Submit">
-    </form>
+  
+  
+  <div class="row gx-3 justify-content-center">
+    <div id="add-game" class="section add-game col-5">
+      <div class="row">
+        <h1>Add game</h1>
+      </div>
+      <form>
+        <label for="game-name">Game name</label><br>
+        <input type="text" id="game-name" name="game-name" value="Enter game name"><br>
+        <label for="progress">Game progress</label><br>
+        <input type="text" id="progress" name="progress" value="Game progress"><br>
+        <label for="comments">Comments</label><br>
+        <input type="text" id="comments" name="comments" value="Game comments"><br><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+    
+    <div id="wishlist" class="section wishlist col-5">
+      <div class="row">
+        <h1>Wishlist</h1>
+      </div>
+      <img src="#" alt="image" id="wishlist-image">
+      <h2 id="wishlist-name">Name</h2>
+      <p id="wishlist-developer">Developer</p>
+      <p id="wishlist-release">release date</p>
+    </div>
   </div>
-  <div id="wishlist">
-    <img src="#" alt="image" id="wishlist-image">
-    <h2 id="wishlist-name">Name</h2>
-    <p id="wishlist-developer">Developer</p>
-    <p id="wishlist-release">release date</p>
-  </div>
+</div>
 </body>
 </html>
