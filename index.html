@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Game Tracker</title>
+  <script defer src="main.js"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+  <div id="navbar">navbar</div>
+  <div id="display-game">
+    <img src="#" alt="game display">
+    <h2>Game Name</h2>
+    <p>Description</p>
+    <div id="progress-bar">progress bar here</div>
+  </div>
+  <div id="add-game">
+    <form>
+      <label for="game-name">Game name</label><br>
+      <input type="text" id="game-name" name="game-name" value="Enter game name"><br>
+      <label for="progress">Game progress</label><br>
+      <input type="text" id="progress" name="progress" value="Game progress"><br>
+      <label for="comments">Comments</label><br>
+      <input type="text" id="comments" name="comments" value="Game comments"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  <div id="wishlist">
+    <img src="#" alt="image">
+    <h2>Name</h2>
+    <p>Developer</p>
+    <p>release date</p>
+  </div>
 </body>
 </html>
