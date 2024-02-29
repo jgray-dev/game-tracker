@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body {
+  height: 100vh;
+  margin: 0;
+  font-family: "IBM Plex Sans", sans-serif;
+  background-color: #222;
+  color: #ddd;
+  background-image: url("https://wallpapercave.com/wp/wp4789697.jpg");
+  background-size: cover;
+}
+
+body.container {
+  padding-left: 0;
+}
+
+.navbar {
+  background-color: rgba(5, 5, 5, 0.8);
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  min-height: 80px;
+}
+
+#wishlist .row {
+  justify-content: center;
+}
+#add-game .row {
+  justify-content: center;
+}
+
+.section {
+  will-change: transform;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 30px;
+  background-color: rgba(14, 14, 14, 0.9);
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+  
+.display {
+  min-height: 85vh
+}
+
+.add-game {
+}
+
+.wishlist {
+}
+
+#progress-bar {
+  text-align: center;
+  width: 100%;
+}
+
+#display-name {
+  text-align: center;
+  font-family: "Kode Mono", monospace;
+}
+
+#display-description {
+  font-family: "Montserrat", sans-serif;
+}
