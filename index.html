@@ -1,64 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Game Tracker</title>
-  <script defer src="main.js"></script>
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Game Tracker</title>
+    <script defer src="main.js"></script>
+    <script defer src="progressbar.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>
+      <div id="navbar" class="navbar col-12">navbar :P</div>
+    </div>
+    <div style="min-height: 65px"></div>
+    <!--Div to space out our first owned game section-->
+    <div class="container">
+      <!--  Bootstrap container -->
 
-<div>
-  <div id="navbar" class="navbar container col-12">navbar :P</div>
-</div>
-<div style="min-height: 65px"></div>
-<div class="container">
+      <!--  Header for displaying owned games progress-->
+      <div id="display-game" class="section display row">
+        <div class="col-12 row" style="min-height: 70vh">
+          <div class="col-5">
+            <h2 id="display-name">Overwatch 2</h2>
+            <img
+              src="https://cdn2.steamgriddb.com/grid/f8013fd6d898ca4374d8113f0939c70c.png"
+              alt="image"
+              width="375px"
+              id="display-image"
+            />
+          </div>
+          <div class="col-7">
+            <p id="display-description">
+              Overwatch 2 is a 2022 first-person shooter game developed and
+              published by Blizzard Entertainment. As a sequel and replacement
+              to the 2016 hero shooter Overwatch, the game intends a shared
+              environment for player-versus-player (PvP) modes while initially
+              having plans for introducing persistent cooperative modes, though
+              the plans were later scrapped in 2023, focusing the game on its
+              PvP elements. A major change in PvP modes was to reduce team sizes
+              from six to five. Several major characters were also reworked.
+              Overwatch 2 is free-to-play on Nintendo Switch, PlayStation 4,
+              PlayStation 5, Windows, Xbox One, and Xbox Series X/S and features
+              full cross-platform play. The game was released in early access on
+              4 October 2022. Blizzard dropped the early access label for the
+              game on August 10, 2023 with the release of Overwatch 2's sixth
+              season.
+            </p>
+          </div>
+        </div>
+        <div class="col-12 row game-1">
+          <div id="progress-bar"></div>
+        </div>
+      </div>
 
-  <div id="display-game" class="section display row">
-    <div class="col-12 row" style="min-height: 70vh">
-      <div class="col-5">
-        <h2 id="display-name">Overwatch 2</h2>
-        <img src="https://cdn2.steamgriddb.com/grid/f8013fd6d898ca4374d8113f0939c70c.png" alt="image" width="375px" id="display-image">
-      </div>
-      <div class="col-7">
-        <p id="display-description">Overwatch 2 is a 2022 first-person shooter game developed and published by Blizzard Entertainment. As a sequel and replacement to the 2016 hero shooter Overwatch, the game intends a shared environment for player-versus-player (PvP) modes while initially having plans for introducing persistent cooperative modes, though the plans were later scrapped in 2023, focusing the game on its PvP elements. A major change in PvP modes was to reduce team sizes from six to five. Several major characters were also reworked. Overwatch 2 is free-to-play on Nintendo Switch, PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S and features full cross-platform play. The game was released in early access on 4 October 2022. Blizzard dropped the early access label for the game on August 10, 2023 with the release of Overwatch 2's sixth season.</p>
+      <!--  Footer for adding owned games and wishlist -->
+      <div class="row gx-3 justify-content-center">
+        <div id="add-game" class="section add-game col-5">
+          <div class="row">
+            <h1>Add game</h1>
+          </div>
+          <form id="new-game">
+            <label for="game-name">Game name</label><br />
+            <input
+              type="text"
+              id="game-name"
+              name="game-name"
+              placeholder="Enter game name"
+            /><br />
+            <label for="progress">Game progress</label><br />
+            <input
+              type="text"
+              id="progress"
+              name="progress"
+              placeholder="Game progress"
+            /><br />
+            <label for="comments">Comments</label><br />
+            <input
+              type="text"
+              id="comments"
+              name="comments"
+              placeholder="Game comments"
+            /><br /><br />
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+        <div id="wishlist" class="section wishlist col-5">
+          <div class="row">
+            <h1>Wishlist</h1>
+          </div>
+          <img src="#" alt="image" id="wishlist-image" />
+          <h2 id="wishlist-name">Name</h2>
+          <p id="wishlist-developer">Developer</p>
+          <p id="wishlist-release">release date</p>
+        </div>
       </div>
     </div>
-    <div class="col-12 row">
-      <div id="progress-bar">progress bar here</div>
-    </div>
-  </div>
-  
-  
-  <div class="row gx-3 justify-content-center">
-    <div id="add-game" class="section add-game col-5">
-      <div class="row">
-        <h1>Add game</h1>
-      </div>
-      <form>
-        <label for="game-name">Game name</label><br>
-        <input type="text" id="game-name" name="game-name" value="Enter game name"><br>
-        <label for="progress">Game progress</label><br>
-        <input type="text" id="progress" name="progress" value="Game progress"><br>
-        <label for="comments">Comments</label><br>
-        <input type="text" id="comments" name="comments" value="Game comments"><br><br>
-        <input type="submit" value="Submit">
-      </form>
-    </div>
-
-    
-    
-    <div id="wishlist" class="section wishlist col-5">
-      <div class="row">
-        <h1>Wishlist</h1>
-      </div>
-      <img src="#" alt="image" id="wishlist-image">
-      <h2 id="wishlist-name">Name</h2>
-      <p id="wishlist-developer">Developer</p>
-      <p id="wishlist-release">release date</p>
-    </div>
-  </div>
-</div>
-</body>
+  </body>
 </html>
