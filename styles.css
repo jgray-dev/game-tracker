@@ -48,9 +48,9 @@ body.container {
     min-height: 85vh
 }
 
-.add-game {}
+/* .add-game {}
 
-.wishlist {}
+.wishlist {} */
 
 #progress-bar {
     text-align: center;
@@ -64,4 +64,20 @@ body.container {
 
 #display-description {
     font-family: "Montserrat", sans-serif;
+}
+
+
+#progress {
+    width: 50%;
+    background-color: #ddd;
+}
+
+
+#progress-bar {
+    width: 10%;
+    height: 35px;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 32px;
+    color: black;
 }
