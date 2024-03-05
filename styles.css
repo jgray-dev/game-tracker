@@ -10,6 +10,7 @@ body {
   color: #ddd;
   background-image: url("https://wallpapercave.com/wp/wp4789697.jpg");
   background-size: cover;
+  scroll-behavior: smooth;
 }
 
 body.container {
@@ -44,14 +45,9 @@ body.container {
 }
   
 .display {
-  min-height: 85vh
+  min-height: 45vh
 }
 
-.add-game {
-}
-
-.wishlist {
-}
 
 #progress-bar {
   text-align: center;
