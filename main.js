@@ -150,13 +150,10 @@ function displayGame(game) {
   const displaydiv = document.createElement("div");
   const displayh2 = document.createElement("h2");
   if (game["title"]) {
-    displayh2.textContent = game["title"]; //WORKING
+    displayh2.textContent = game["title"];
   }
   const displayimg = document.createElement("img");
   displayimg.src = game["thumbnail"];
-  displayimg.addEventListener("click", () => {
-    console.log("img clicked");
-  });
   const descDiv = document.createElement("div");
   descDiv.classList.add("col-6", "row");
   const descP = document.createElement("p");
@@ -176,6 +173,12 @@ function displayGame(game) {
       console.log("delete button clicked");
       deleteGame(game);
       location.reload();
+    });
+    deleteButton.addEventListener("mouseover", () => {
+      deleteButton.style.backgroundColor = "red";
+    });
+    deleteButton.addEventListener("mouseout", () => {
+      deleteButton.style.backgroundColor = "white";
     });
     displayDiv.append(deleteButton);
   }
