@@ -5,12 +5,24 @@ const defaultDisplay = {
   short_description: "A place to track your video game progress.",
   developer: "",
   publisher: "pub",
+  thumbnail:
+    "https://images.freeimages.com/clg/images/29/296330/red-down-arrow_f",
+  release_date: "3/7/2024",
+  platform: "Web",
 };
+
+//
+// descP.innerHTML = `<b>Description</b>: ${game["short_description"]}<br><br>
+//   <b>Release date</b>: ${game["release_date"]}<br><br>
+//   <b>Platform</b>: ${game["platform"]}<br><br>
+//   <b>Developer</b>: ${game["developer"]}<br><br>
+//   <b>Publisher</b>: ${game["publisher"]}<br><br><br>
+//   <b>Your comments</b>: ${game["comments"]}<br><br>`;
 
 document.addEventListener("DOMContentLoaded", async () => {
   await buildPage();
-  await buildNav();
-  await gameForm();
+  buildNav();
+  gameForm();
 });
 
 async function getAllGames() {
@@ -134,6 +146,7 @@ function displayGame(game) {
   innerDiv.classList.add("col-12", "row");
   const displayDiv = document.createElement("div");
   displayDiv.classList.add("col-6");
+  displayDiv.classList.add("displaydiv");
   const displaydiv = document.createElement("div");
   const displayh2 = document.createElement("h2");
   if (game["title"]) {
@@ -141,6 +154,9 @@ function displayGame(game) {
   }
   const displayimg = document.createElement("img");
   displayimg.src = game["thumbnail"];
+  displayimg.addEventListener("click", () => {
+    console.log("img clicked");
+  });
   const descDiv = document.createElement("div");
   descDiv.classList.add("col-6", "row");
   const descP = document.createElement("p");
@@ -153,19 +169,69 @@ function displayGame(game) {
   displayDiv.append(displayh2);
   displayDiv.append(displayimg);
   innerDiv.append(displayDiv);
+  if (game.id) {
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete game";
+    deleteButton.addEventListener("click", () => {
+      console.log("delete button clicked");
+      deleteGame(game);
+      location.reload();
+    });
+    displayDiv.append(deleteButton);
+  }
   descDiv.append(descP);
+
   innerDiv.append(descDiv);
   const progressOuterDiv = document.createElement("div");
-  progressOuterDiv.classList.add("progressbar");
+  progressOuterDiv.classList.add("progressbarouter");
   const progressInnerDiv = document.createElement("div");
-  progressInnerDiv.classList.add(`progress-bar-${game.id}`);
-  progressInnerDiv.textContent = "insert progress bar here"; // JAVASCRIPT PROGRESS BAR HERE
+  progressInnerDiv.classList.add("progressbar");
+  progressInnerDiv.textContent = `${game["progress"]}%`; // JAVASCRIPT PROGRESS BAR HERE
   progressOuterDiv.append(progressInnerDiv);
   outerDiv.append(innerDiv);
   outerDiv.append(progressOuterDiv);
   div.append(outerDiv);
+  // handleHover(progressInnerDiv, "Click to visit fortnite webpage");
+  buildProgressbar(game, progressInnerDiv);
 }
 
 // TODO: Add a delete button to each element being displayed, and delete from library if clicked.
 // TODO: Finish the progress bar
 // TODO: Clean up
+
+function deleteGame(game) {
+  console.log(game.id);
+  console.log(`${URL}/library/${game.id}`);
+  fetch(`${URL}/library/${game.id}`, {
+    method: "DELETE",
+  }).catch((e) => {
+    console.log("error:", e);
+  });
+}
+
+function buildProgressbar(game, element) {
+  console.log(element);
+  const progress = parseInt(game.progress);
+  element.style.width = `${progress}%`;
+}
+
+function handleHover(element, message) {
+  console.log("handle hover called");
+  element.addEventListener("mousemove", (event) => {
+    const tooltip = document.getElementById("tooltip");
+    tooltip.style.visibility = "visible";
+    tooltip.classList.add("tooltip");
+    tooltip.innerHTML = message;
+    let x = event.clientX + window.scrollX;
+    let y = event.clientY + window.scrollY;
+
+    tooltip.style.left = x + 20 + "px";
+    tooltip.style.top = y - 15 + "px";
+    console.log(tooltip.style.left, tooltip.style.top);
+  });
+  element.addEventListener("mouseout", () => {
+    // Mouse is off element, remove tooltip
+    const tooltip = document.getElementById("tooltip");
+    tooltip.style.visibility = "hidden";
+  });
+}

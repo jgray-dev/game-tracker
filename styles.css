@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 
 body {
   height: 100vh;
   margin: 0;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #222;
   color: #ddd;
   background-image: url("https://wallpapercave.com/wp/wp4789697.jpg");
@@ -24,13 +23,14 @@ body.container {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 1000;
+  z-index: 10;
   min-height: 80px;
 }
 
 #wishlist .row {
   justify-content: center;
 }
+
 #add-game .row {
   justify-content: center;
 }
@@ -44,11 +44,32 @@ body.container {
   border-radius: 20px;
   box-sizing: border-box;
 }
-  
+
 .display {
   min-height: 45vh
 }
 
+.progressbar {
+  color: white;
+  background-color: #01a101;
+  border-radius: 7px;
+  padding: 3px 15px 3px 3px;
+  text-align: right;
+}
+
+.progressbarouter {
+  width: 100%;
+  background-color: #a60000;
+  border-radius: 7px;
+}
+
+.displaydiv {
+  text-align: center;
+}
+
+.displaydiv button {
+  margin-top: 20px;
+}
 
 #progress-bar {
   text-align: center;
@@ -71,11 +92,27 @@ body.container {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 1000;
+  z-index: 10;
 }
 
 .link {
   color: #f2f2f2;
   font-style: italic;
   text-decoration: none;
+}
+
+
+.tooltip {
+  left: 0;
+  top: 50vh;
+  position: absolute;
+  z-index: 100;
+  background-color: rgb(255, 0, 0);
+  backdrop-filter: blur(3px);
+  color: white;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  visibility: visible;
 }
