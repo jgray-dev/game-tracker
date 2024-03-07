@@ -5124,35 +5124,5 @@
     }
   ],
   "library": [
-    {
-      "id": "540",
-      "title": "Overwatch 2",
-      "thumbnail": "https://www.freetogame.com/g/540/thumbnail.jpg",
-      "short_description": "A hero-focused first-person team shooter from Blizzard Entertainment.",
-      "game_url": "https://www.freetogame.com/open/overwatch-2",
-      "genre": "Shooter",
-      "platform": "PC (Windows)",
-      "publisher": "Activision Blizzard",
-      "developer": "Blizzard Entertainment",
-      "release_date": "2022-10-04",
-      "freetogame_profile_url": "https://www.freetogame.com/overwatch-2",
-      "progress": "100",
-      "comments": "mid"
-    },
-    {
-      "id": "23",
-      "title": "Apex Legends",
-      "thumbnail": "https://www.freetogame.com/g/23/thumbnail.jpg",
-      "short_description": "A free-to-play strategic battle royale game featuring 60-player matches and team-based play. ",
-      "game_url": "https://www.freetogame.com/open/apex-legends",
-      "genre": "Shooter",
-      "platform": "PC (Windows)",
-      "publisher": "Electronic Arts",
-      "developer": "Electronic Arts",
-      "release_date": "2019-02-04",
-      "freetogame_profile_url": "https://www.freetogame.com/apex-legends",
-      "progress": "0",
-      "comments": "terrible game but i guess ill play it"
-    }
   ]
 }

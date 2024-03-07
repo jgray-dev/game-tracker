@@ -19,6 +19,7 @@ body.container {
 
 .navbar {
   background-color: rgba(5, 5, 5, 0.8);
+  backdrop-filter: blur(5px);
   overflow: hidden;
   position: fixed;
   width: 100%;
@@ -61,4 +62,20 @@ body.container {
 
 #display-description {
   font-family: "Montserrat", sans-serif;
+}
+
+
+.nav {
+  background-color: rgba(5, 5, 5, 0.8);
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.link {
+  color: #f2f2f2;
+  font-style: italic;
+  text-decoration: none;
 }
